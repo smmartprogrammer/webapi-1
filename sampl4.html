@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample 4</title>
+    <style>
+         body{
+             background-image: url(background.jpg);
+             background-repeat: no-repeat;
+             background-size: contain;  
+         }
+
+    </style>
+</head>
+<body>
+    <img src="https://media.giphy.com/media/1nPJ2FtjTegz4tYOf9/giphy.gif" id="cloud" />
+    
+    <script>
+        var elem = document.querySelector('#cloud');
+
+        var animatedElem = elem.animate([
+            {transform: 'translate(0, 50px)'},
+            {transform: 'translate(400px, 80px)'},
+            {transform: 'translate(800px, 50px)'},
+            {transform: 'translate(400px, 80px)'},
+            {transform: 'translate(0, 50px)'},
+        ], {
+            duration: 6000,
+            iterations: Infinity
+        })
+
+        document.addEventListener("mousedown", ()=>{
+            animatedElem.pause();
+        } )
+
+        document.addEventListener("mouseup", ()=>{
+            animatedElem.play();
+        } )
+
+
+
+
+    </script>
+    
+</body>
+</html>
